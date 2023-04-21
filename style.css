@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: red solid 1px; */
+}
+.ar {
+  font-size: 10em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+.cover2 {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(ice.jpeg);
+  background-size: 60vw;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  mix-blend-mode: screen;
+  opacity: 0.1;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #22222222;
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.25) 35%,
+      transparent 35%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.6) 35%, transparent 35%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 45%, transparent 45%),
+    linear-gradient(-135deg, rgba(255, 255, 255, 0.3) 55%, transparent 55%);
+  background-position: 0% 50%, 0% 50%, 0% 80%, 0% 60%;
+  background-size: 100vmax 100vmax;
+  animation: fx infinite 120s alternate;
+}
+@keyframes fx {
+  0% {
+    background-position: 0% 115%, 0% 36.5%, 0% 19%, 0% -40%;
+  }
+  100% {
+    background-position: 0% 50%, 0% 50%, 0% 80%, 0% 60%;
+  }
+}
+.center {
+  width: 100%;
+  max-width: 400px;
+  min-height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+  padding: 0 2em;
+  font-family: "Raleway", sans-serif;
+}
+.center h1 {
+  color: white;
+  font-size: clamp(2em, 4em, 4vw);
+  text-align: center;
+}
+.center .data {
+  padding: 0 1em;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.center .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.center .info .inputs {
+  width: 100%;
+  min-height: 20px;
+  position: relative;
+}
+.center .info .inputs input {
+  z-index: 4;
+  position: relative;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.4em 0.6em 0.4em 0.8em;
+  font-size: 1.2em;
+  background-color: transparent;
+  color: #222222;
+}
+.center .info .inputs span {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0.5em;
+  padding: 0.3em 0;
+  font-size: 1.3em;
+  color: white;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.center .info .inputs i {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: white;
+  transition: all ease 300ms;
+  border-radius: 5px;
+}
+.center .info .inputs input:valid ~ span,
+.center .info .inputs input:focus ~ span {
+  left: 0;
+  translate: 0 -2em;
+  font-size: 0.9em;
+}
+
+.center .info .inputs input:valid ~ i,
+.center .info .inputs input:focus ~ i {
+  height: 100%;
+}
+button {
+  font-size: 1.5em;
+  align-self: end;
+  background-color: white;
+  border: 0;
+  outline: 0;
+  padding: 0.2em 0.6em;
+  color: #222222;
+  border-radius: 5px;
+}
+.error {
+  z-index: 500;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  translate: -50% 0;
+}
+.error p {
+  text-align: center;
+  width: fit-content;
+  color: #222222;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(255, 130, 130, 0.8);
+  padding: 0.5em 0.8em;
+  border-radius: 0.5em;
+}
+a {
+  color: #fff;
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+a:hover {
+  color: lightslategrey;
+}
